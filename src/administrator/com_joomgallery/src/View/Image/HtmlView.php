@@ -106,7 +106,11 @@ class HtmlView extends JoomGalleryView
     elseif($this->_layout == 'ftp')
     {
       $this->addToolbarFtp();
-      $this->form->setFieldAttribute('title', 'required', 'false');
+
+      if($this->config->get('jg_useorigfilename') == 1)
+      {
+        $this->form->setFieldAttribute('title', 'required', 'false');
+      }
     }
     elseif($this->_layout == 'replace')
     {
